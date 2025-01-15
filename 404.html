@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --text: #1f2937;
+            --background: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .error-illustration {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .circle {
+            width: 100%;
+            height: 100%;
+            border: 8px solid var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .eyes {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .eye {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .mouth {
+            width: 60px;
+            height: 60px;
+            border: 8px solid var(--primary);
+            border-radius: 50%;
+            border-top-color: transparent;
+            transform: rotate(45deg);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .search-container {
+            margin: 2rem 0;
+        }
+
+        input[type="search"] {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background: var(--secondary);
+        }
+
+        @media (max-width: 640px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-illustration {
+                width: 150px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <div class="error-illustration">
+            <div class="circle"></div>
+            <div class="face">
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+        <h1>Oops! Page Not Found</h1>
+        <p>Looks like this page took a wrong turn and got lost in cyberspace! 🚀</p>
+        <p>Don't worry though, we can help you find your way back.</p>
+
+       
+
+        <div class="buttons">
+            <a href="/" class="button">Go Home</a>
+            
+        </div>
+    </div>
+
+    <script>
+        // Animate sad face
+        gsap.to(".mouth", {
+            rotation: 225,
+            duration: 1,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        // Blink animation for eyes
+        gsap.to(".eye", {
+            scaleY: 0.1,
+            duration: 0.1,
+            repeat: -1,
+            repeatDelay: 3,
+            yoyo: true
+        });
+
+    </script>
+</body>
+</html>
